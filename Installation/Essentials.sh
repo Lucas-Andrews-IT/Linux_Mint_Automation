@@ -43,6 +43,17 @@ if [[ $install_brave =~ ^[Yy][Ee][Ss]$ ]]; then
     echo "Brave web browser installation completed."
 fi
 
+# Prompt for Discord installation
+read -p "Do you want to install Discord? (yes/no): " install_discord
+echo
+
+if [[ $install_discord =~ ^[Yy][Ee][Ss]$ ]]; then
+    wget -O ~/discord.deb "https://discordapp.com/api/download?platform=linux&format=deb"
+    sudo dpkg -i ~/discord.deb
+    sudo apt install -f
+    echo "Discord installation completed."
+fi
+
 # ... (Other installations)
 
 # Prompt for Synth-Shell installation and theme selection
